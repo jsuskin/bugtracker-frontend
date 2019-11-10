@@ -1,4 +1,4 @@
-import { NEW_ISSUE } from '../actions/types';
+import { NEW_ISSUE, UPDATE_ISSUE } from '../actions/types';
 
 const initialState = {
   item: {}
@@ -7,6 +7,11 @@ const initialState = {
 export default function(state = initialState, action) {
   switch(action.type) {
     case NEW_ISSUE:
+      return {
+        ...state,
+        item: action.payload
+      }
+    case UPDATE_ISSUE:
       return {
         ...state,
         item: action.payload

@@ -2,7 +2,6 @@ import { NEW_ISSUE } from './types';
 import { URL } from '../data/constants';
 
 export const createIssue = issueData => dispatch => {
-  console.log('creating issue');
   fetch(`${URL}/issues`, {
     method: 'POST',
     headers: {
@@ -16,4 +15,8 @@ export const createIssue = issueData => dispatch => {
       payload: issue
     })
   );
+}
+
+export const updateIssue = issueData => dispatch => {
+  console.log('updating issue');
 }

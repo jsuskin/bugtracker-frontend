@@ -51,7 +51,7 @@ class IssueForm extends Component {
     return (
       <div className="issue-form">
         <h2 className="add-issue-header">Add Issue</h2>
-        <form onSubmit={this.handleSubmit} >
+        <form onSubmit={this.handleSubmit}>
           <div className="form-inputs">
             <div className="form-input">
               <label>Project Title</label><br />

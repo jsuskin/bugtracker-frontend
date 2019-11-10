@@ -57,7 +57,7 @@ body {
 }
 
 .issue-form {
-  position: fixed;
+  position: relative;
   width: 100%;
   margin-bottom: 30px;
   bottom: 0;
@@ -105,11 +105,11 @@ th, td{
 }
 
 .react-contextmenu {
-    background-color: #fff;
+    background-color: #222;
     background-clip: padding-box;
     border: 1px solid rgba(0,0,0,.15);
     border-radius: .25rem;
-    color: #373a3c;
+    color: #999;
     font-size: 16px;
     margin: 2px 0 0;
     min-width: 160px;
@@ -132,4 +132,8 @@ th, td{
   -ms-user-select: none;     /* IE 10   */
   -o-user-select: none;      /* Opera   */
   user-select: none;
+}
+
+table {
+  font-size: 14px;
 }

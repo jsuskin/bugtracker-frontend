@@ -19,8 +19,8 @@ class Projects extends Component {
     })
   }
 
-  handleCtx = e => {
-    console.log(e.data);
+  handleCtx = (e, data) => {
+    console.log(data.issueId);
   }
 
   render() {
@@ -56,13 +56,25 @@ class Projects extends Component {
                 <td>{issue.expected_output}</td>
                 <td>{issue.actual_output}</td>
                 <td id="issue-status" className="disable-text-highlighting">
-                  <ContextMenuTrigger id="ctx-menu">
-                    {issue.status}
-                  </ContextMenuTrigger>
-
-                  <ContextMenu id="ctx-menu">
-                    {issue.status === 'Open' ? <MenuItem data={{foo: 'bar'}} onClick={this.handleCtx}>Closed</MenuItem> : <MenuItem data={{foo: 'bar'}} onClick={this.handleCtx}>Open</MenuItem>}
-                  </ContextMenu>
+                  {issue.status === 'Open' ? (
+                    <>
+                      <ContextMenuTrigger id={`issue-status-ctx-menu-${issue.id}`}>
+                        {issue.status}
+                      </ContextMenuTrigger>
+                      <ContextMenu id={`issue-status-ctx-menu-${issue.id}`}>
+                        <MenuItem data={{issueId: issue.id, status: 'Closed'}} onClick={this.handleCtx}>Closed</MenuItem>
+                      </ContextMenu>
+                    </>
+                  ) : (
+                    <>
+                      <ContextMenuTrigger id={`issue-status-ctx-menu-${issue.id}`}>
+                        {issue.status}
+                      </ContextMenuTrigger>
+                      <ContextMenu id={`issue-status-ctx-menu-${issue.id}`}>
+                        <MenuItem data={{issueId: issue.id, status: 'Open'}} onClick={this.handleCtx}>Open</MenuItem>
+                      </ContextMenu>
+                    </>
+                  )}
                 </td>
               </tr>
             )) : null}
