@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchProjects, createProject } from '../actions/projectActions';
 import { createIssue } from '../actions/issueActions';
-// import { URL } from '../data/constants';
 
 class IssueForm extends Component {
   state = {

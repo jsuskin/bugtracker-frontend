@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 import { connect } from 'react-redux';
 import { fetchProjects } from '../actions/projectActions'
 
@@ -16,6 +17,10 @@ class Projects extends Component {
     this.setState({
       value: e.target.value
     })
+  }
+
+  handleCtx = e => {
+    console.log(e.data);
   }
 
   render() {
@@ -50,7 +55,15 @@ class Projects extends Component {
                 <td>{issue.summary}</td>
                 <td>{issue.expected_output}</td>
                 <td>{issue.actual_output}</td>
-                <td>{issue.status}</td>
+                <td id="issue-status" className="disable-text-highlighting">
+                  <ContextMenuTrigger id="ctx-menu">
+                    {issue.status}
+                  </ContextMenuTrigger>
+
+                  <ContextMenu id="ctx-menu">
+                    {issue.status === 'Open' ? <MenuItem data={{foo: 'bar'}} onClick={this.handleCtx}>Closed</MenuItem> : <MenuItem data={{foo: 'bar'}} onClick={this.handleCtx}>Open</MenuItem>}
+                  </ContextMenu>
+                </td>
               </tr>
             )) : null}
           </tbody>

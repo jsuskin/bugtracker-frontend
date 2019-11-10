@@ -56,6 +56,13 @@ body {
   border-radius: 10px;
 }
 
+.issue-form {
+  position: fixed;
+  width: 100%;
+  margin-bottom: 30px;
+  bottom: 0;
+}
+
 .form-inputs {
   display: flex;
   justify-content: center;
@@ -95,4 +102,34 @@ table * {
 
 th, td{
   border: 1px solid #222;
+}
+
+.react-contextmenu {
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+    color: #373a3c;
+    font-size: 16px;
+    margin: 2px 0 0;
+    min-width: 160px;
+    outline: none;
+    opacity: 0;
+    padding: 5px 0;
+    pointer-events: none;
+    text-align: left;
+    transition: opacity 250ms ease !important;
+    cursor: pointer;
+}
+
+#issue-status {
+  cursor: default;
+}
+
+.disable-text-highlighting {
+  -webkit-user-select: none; /* Webkit  */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE 10   */
+  -o-user-select: none;      /* Opera   */
+  user-select: none;
 }
