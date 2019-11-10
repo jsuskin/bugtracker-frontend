@@ -1,22 +1,98 @@
-.App {
+
+body {
+  font-family: tahoma,helvetica,sans-serif;
+  background: #303030;
+  color: #999;
+}
+
+.app-header {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  top: 0;
+  background: #222;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-title {
+  /* color: #999c; */
+}
+
+.spacer {
+  width: 100%;
+  height: 120px;
+}
+
+.content {
+  /* margin-top: 70px; */
+}
+
+.select-project-default {
+  display: none;
+}
+
+.add-issue-header, .submit-issue, .show-project-options {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+#submit-issue, #show-project-options {
+  background-color: #222;
+  border: none;
+  border-radius: 10px;
+  color: #999;
+  padding: 15px 32px;
+  width: 300px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#show-project-options {
+  height: 40px;
+  border-radius: 10px;
+}
+
+.form-inputs {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: #222;
+  padding: 10px;
+  width: 80%;
+  margin: auto;
 }
 
-.App-link {
-  color: #09d3ac;
+.form-inputs * {
+  margin: 0 20px;
+}
+
+.form-input * {
+  margin: 10px;
+}
+
+input, textarea {
+  border: none;
+  border-radius: 3px;
+  height: 20px;
+  width: 190px;
+  background: #303030;
+  color: #999;
+}
+
+table {
+  width: 80%;
+  margin: 10px auto;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+table * {
+  padding: 8px;
+}
+
+th, td{
+  border: 1px solid #222;
 }
