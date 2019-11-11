@@ -1,4 +1,4 @@
-import { NEW_ISSUE, UPDATE_ISSUE } from '../actions/types';
+import { NEW_ISSUE, UPDATE_ISSUE_STATUS } from '../actions/types';
 
 const initialState = {
   item: {}
@@ -11,7 +11,7 @@ export default function(state = initialState, action) {
         ...state,
         item: action.payload
       }
-    case UPDATE_ISSUE:
+    case UPDATE_ISSUE_STATUS:
       return {
         ...state,
         item: action.payload

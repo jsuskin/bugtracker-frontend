@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 import { connect } from 'react-redux';
-import { fetchProjects } from '../actions/projectActions'
+import { fetchProjects } from '../actions/projectActions';
+import { updateIssueStatus } from '../actions/issueActions';
+
 
 class Projects extends Component {
   state = {
@@ -20,7 +22,8 @@ class Projects extends Component {
   }
 
   handleCtx = (e, data) => {
-    console.log(data.issueId);
+    // console.log(data.issueId);
+    this.props.updateIssueStatus(data);
   }
 
   render() {
@@ -88,13 +91,15 @@ class Projects extends Component {
 }
 
 Projects.propTypes = {
+  updateIssueStatus: PropTypes.func.isRequired,
   fetchProjects: PropTypes.func.isRequired,
   projects: PropTypes.array.isRequired
 }
 
 const mapStateToProps = state => ({
   // `projects` fm reducers/index.js
-  projects: state.projects.items
+  projects: state.projects.items,
+  issue: state.issues.item
 })
 
-export default connect(mapStateToProps, { fetchProjects })(Projects);
+export default connect(mapStateToProps, { fetchProjects, updateIssueStatus })(Projects);
